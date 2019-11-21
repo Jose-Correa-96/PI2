@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Dopetrope by HTML5 UP</title>
+		<title>Sensor de Flama y Casa Domótica</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,14 +18,14 @@
 				<section id="header">
 
 					<!-- Logo -->
-						<h1><a href="index.html">Dopetrope</a></h1>
+						<h1><a href="index.html">FSAHA</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.html">Inicio</a></li>
 								<li>
-									<a href="#">Dropdown</a>
+									<a href="#">Proyectos</a>
 									<ul>
 										<li><a href="#">Lorem ipsum dolor</a></li>
 										<li><a href="#">Magna phasellus</a></li>
@@ -43,9 +43,9 @@
 										<li><a href="#">Veroeros feugiat</a></li>
 									</ul>
 								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li class="current"><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								<li><a href="left-sidebar.html">Materiales</a></li>
+								<li class="current"><a href="right-sidebar.html">Codigo</a></li>
+								<li><a href="no-sidebar.html">Nosotros</a></li>
 							</ul>
 						</nav>
 
@@ -59,28 +59,24 @@
 
 								<!-- Content -->
 									<article class="box post">
-										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="images/ArduinoCommunityLogo.png" alt="" /></a>
 										<header>
-											<h2>Right sidebar</h2>
-											<p>Lorem ipsum dolor sit amet feugiat</p>
+											<h2>Arduino</h2>
+											
 										</header>
 										<p>
-											Vestibulum scelerisque ultricies libero id hendrerit. Vivamus malesuada quam faucibus ante dignissim auctor
-											hendrerit libero placerat. Nulla facilisi. Proin aliquam felis non arcu molestie at accumsan turpis commodo.
-											Proin elementum, nibh non egestas sodales, augue quam aliquet est, id egestas diam justo adipiscing ante.
-											Pellentesque tempus nulla non urna eleifend ut ultrices nisi faucibus.
+											El Arduino es una placa basada en un microcontrolador ATMEL. Los microcontroladores son circuitos integrados 
+											en los que se pueden grabar instrucciones, las cuales las escribes con el lenguaje de programación que puedes 
+											utilizar en el entorno Arduino IDE.
 										</p>
 										<p>
-											Praesent a dolor leo. Duis in felis in tortor lobortis volutpat et pretium tellus. Vestibulum ac ante nisl,
-											a elementum odio. Duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-											placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-											eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-											elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-											sit amet nullam consequat feugiat dolore tempus.
+											Programar Arduino consiste en traducir a líneas de código las tareas automatizadas que queremos hacer leyendo 
+											de los sensores y en función de las condiciones del entorno programar la interacción con el mundo exterior 
+											mediante unos actuadores.
 										</p>
 										<section>
 											<header>
-												<h3>Something else</h3>
+												<h3>Sensor de Flama</h3>
 											</header>
 											<p>
 												Elementum odio duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
@@ -98,15 +94,104 @@
 										</section>
 										<section>
 											<header>
-												<h3>So in conclusion ...</h3>
+												<h3>Casa Domótica</h3>
 											</header>
 											<p>
-												Nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-												eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-												elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-												sit amet nullam consequat feugiat dolore tempus. Elementum odio duis semper risus et lectus commodo fringilla.
-												Maecenas sagittis convallis justo vel mattis.
+												El codigo que se muestra solo contiene el sensor a bluetooth.
 											</p>
+												<p>int led1 = 2;
+													int led2 = 3;
+													int led3 = 4;
+													int led4 = 5;
+													int led5 = 6;
+													int led6 = 7;
+													int led7 = 8;
+													int estado = 0;
+													void setup()
+													{
+													  Serial.begin(9600);
+													  pinMode(led1, OUTPUT);
+													  pinMode(led2, OUTPUT);
+													  pinMode(led3, OUTPUT);
+													  pinMode(led4, OUTPUT);
+													  pinMode(led5, OUTPUT);
+													  pinMode(led6, OUTPUT);
+													  pinMode(led7, OUTPUT);
+													
+													  
+													}
+													
+													void loop()
+													{
+													   if( Serial.available()>0)
+													  {
+														estado = Serial.read();
+													  }
+													  switch(estado)
+													  {
+														case 'a':
+														digitalWrite(led1, HIGH);
+														break;
+														case 'b':
+														digitalWrite(led1, LOW);
+														break;
+														case 'c':
+														digitalWrite(led2, HIGH);
+														break;
+														case 'd':
+														digitalWrite(led2, LOW);
+														break;
+														case 'e':
+														digitalWrite(led3, HIGH);
+														break;
+														case 'f':
+														digitalWrite(led3, LOW);
+														break;
+														case 'g':
+														digitalWrite(led4, HIGH);
+														break;
+														case 'h':
+														digitalWrite(led4, LOW);
+														break;
+														case 'i':
+														digitalWrite(led5, HIGH);
+														break;
+														case 'j':
+														digitalWrite(led5, LOW);
+														break;
+														case 'k':
+														digitalWrite(led6, HIGH);
+														break;
+														case 'l':
+														digitalWrite(led6, LOW);
+														break;
+														case 'm':
+														digitalWrite(led7, HIGH);
+														break;
+														case 'n':
+														digitalWrite(led7, LOW);
+														break;
+														case 'o':
+														digitalWrite(led1,HIGH);
+														digitalWrite(led2,HIGH);
+														digitalWrite(led3,HIGH);
+														digitalWrite(led4,HIGH);
+														digitalWrite(led5,HIGH);
+														digitalWrite(led6,HIGH);
+														digitalWrite(led7,HIGH);
+														break;
+														case 'p':
+														digitalWrite(led1,LOW);
+														digitalWrite(led2,LOW);
+														digitalWrite(led3,LOW);
+														digitalWrite(led4,LOW);
+														digitalWrite(led5,LOW);
+														digitalWrite(led6,LOW);
+														digitalWrite(led7,LOW);
+														break;
+													  }
+													}
+													</p>
 										</section>
 									</article>
 
@@ -115,11 +200,13 @@
 
 								<!-- Sidebar -->
 									<section class="box">
-										<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="images/arduino.jpg" alt="" /></a>
 										<header>
-											<h3>Sed etiam lorem nulla</h3>
+											<h3>Sabias que...?</h3>
 										</header>
-										<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit  adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+										<p>El nombre del dispositivo viene del nombre del Bar di Re Arduino 
+											(Bar del Rey Arduino) donde Massimo Banzi pasaba algunas horas. 
+											El rey Arduino fue rey de Italia entre los años 1002 y 1014.</p>
 										<footer>
 											<a href="#" class="button alt">Magna sed taciti</a>
 										</footer>
