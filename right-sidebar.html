@@ -27,20 +27,8 @@
 								<li>
 									<a href="#">Proyectos</a>
 									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li>
-											<a href="#">Phasellus consequat</a>
-											<ul>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-												<li><a href="#">Veroeros feugiat</a></li>
-												<li><a href="#">Nisl sed aliquam</a></li>
-												<li><a href="#">Dolore adipiscing</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
+										<li><a href="#">Sensor de Flama</a></li>
+										<li><a href="#">Casa Domótica</a></li>
 									</ul>
 								</li>
 								<li><a href="left-sidebar.html">Materiales</a></li>
@@ -79,17 +67,26 @@
 												<h3>Sensor de Flama</h3>
 											</header>
 											<p>
-												Elementum odio duis semper risus et lectus commodo fringilla. Maecenas sagittis convallis justo vel mattis.
-												placerat, nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-												eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-												elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-												sit amet nullam consequat feugiat dolore tempus.
-											</p>
-											<p>
-												Nunc diam iaculis massa, et aliquet nibh leo non nisl vitae porta lobortis, enim neque fringilla nunc,
-												eget faucibus lacus sem quis nunc suspendisse nec lectus sit amet augue rutrum vulputate ut ut mi. Aenean
-												elementum, mi sit amet porttitor lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor
-												sit amet nullam consequat feugiat dolore tempus.
+												const int sensorPin = 9;
+
+													void setup()
+													{
+													   Serial.begin(9600);
+													   pinMode(sensorPin, INPUT);
+													}
+
+													void loop()
+													{
+													   int humedad = digitalRead(sensorPin);
+													
+													   //mandar mensaje a puerto serie en función del valor leido
+													   if (humedad == HIGH)
+													   {
+													      Serial.println("Detección");   
+													      //aquí se ejecutarían las acciones
+													   }
+													   delay(1000);
+													}
 											</p>
 										</section>
 										<section>
@@ -208,7 +205,7 @@
 											(Bar del Rey Arduino) donde Massimo Banzi pasaba algunas horas. 
 											El rey Arduino fue rey de Italia entre los años 1002 y 1014.</p>
 										<footer>
-											<a href="#" class="button alt">Magna sed taciti</a>
+											<a href="#" class="button alt">Mas información</a>
 										</footer>
 									</section>
 									<section class="box">
@@ -239,7 +236,7 @@
 							<div class="col-8 col-12-medium">
 								<section>
 									<header>
-										<h2>Blandit nisl adipiscing</h2>
+										<h2>Cronograma</h2>
 									</header>
 									<ul class="dates">
 										<li>
@@ -340,13 +337,14 @@
 											</p>
 										</li>
 										<li>
-											<h3>Mail</h3>
-											<p><a href="#">someone@untitled.tld</a></p>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<p>(800) 000-0000</p>
-										</li>
+												<h3>Mail</h3>
+												<p><a href="#">jean.palomino@vallegrande.edu.pe</a></p>
+												<p><a href="#">jose.correa@vallegrande.edu.pe</a></p>
+											</li>
+											<li>
+												<h3>Phone</h3>
+												<p>(+51) 987-784-315</p>
+											</li>
 									</ul>
 								</section>
 							</div>
